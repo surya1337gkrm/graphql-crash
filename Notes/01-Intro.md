@@ -1,4 +1,4 @@
-# Introduction
+# 01. Introduction
 
 We have few issues with Rest-API's.
 
@@ -69,7 +69,7 @@ const {url} = startStandaloneServer(server,
 {listen:{port:4000});
 **ApolloServer** method takes an object as an input, which has typeDefs and resolvers.
 
-- **typeDefs** (Type Definitions) : description of our data types and relation between other data types.
+- **typeDefs** (Type Definitions) : description of our data types and relation between other data types and different query landing points which can be used to fetch required data.
 - **resolvers** : Resolver functions that determine how we respond to the queries.
 
 **startStandaloneServer** takes 2 arguments. **server** which is created by ApolloServer in previous step and an object that has listen property which is an object that has **port address** on which we will listen to the incoming requests.

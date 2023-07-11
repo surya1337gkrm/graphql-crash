@@ -61,12 +61,13 @@ After installing the required packages, in index.js file, import ApolloServer an
 **ApolloServer** will be used to setup the server and configure the server and tell apollo how to handle different types of data and respond to the queries. Where as **startStandaloneServer** will be used to start the server and to listen to the incoming requests.
 
 To create a graphql server, we need to follow the below steps.
-const {server} = new ApolloServer({
-//typeDefs
-//resolvers
-});
-const {url} = startStandaloneServer(server,
-{listen:{port:4000});
+	const {server} = new ApolloServer({
+									//typeDefs
+									//resolvers
+								});
+	const url = startStandaloneServer(server,
+									  {listen:{port:4000});
+									  
 **ApolloServer** method takes an object as an input, which has typeDefs and resolvers.
 
 - **typeDefs** (Type Definitions) : description of our data types and relation between other data types and different query landing points which can be used to fetch required data.

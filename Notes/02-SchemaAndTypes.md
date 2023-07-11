@@ -71,7 +71,7 @@ After defining the schema, import typeDefs and add in the ApolloServer fn. This 
 
 **index.js**
 
-    import { typeDefs } from  './schema';
+    import { typeDefs } from  './schema.js';
 
     // Other code
     //server setup
@@ -80,3 +80,5 @@ After defining the schema, import typeDefs and add in the ApolloServer fn. This 
     								typeDefs,
     								//resolvers
     							});
+
+Before running the server, we need to setup the resolvers and pass the resolvers to ApolloServer fn.

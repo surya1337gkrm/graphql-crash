@@ -10,7 +10,6 @@ const resolvers = {
       return db.games;
     },
     game(parent, args, context) {
-      console.log(parent, args, context);
       return db.games.find((game) => game.id === args.id);
     },
     authors() {
@@ -24,6 +23,24 @@ const resolvers = {
     },
     review(parent, args, context) {
       return db.reviews.find((review) => args.id === review.id);
+    },
+  },
+  Game: {
+    reviews(parent) {
+      return db.reviews.filter((review) => review.game_id === parent.id);
+    },
+  },
+  Author: {
+    reviews(parent) {
+      return db.reviews.filter((review) => review.author_id === parent.id);
+    },
+  },
+  Review: {
+    game(parent) {
+      return db.games.find((game) => game.id === parent.game_id);
+    },
+    author(parent) {
+      return db.authors.find((author) => author.id === parent.author_id);
     },
   },
 };

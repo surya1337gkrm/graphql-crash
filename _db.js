@@ -29,7 +29,7 @@ let reviews = [
     id: '3',
     rating: 9,
     content: 'lorem ipsum dolor sit amet',
-    author_id: "1",
+    author_id: "3",
     game_id: "2",
   },
   {

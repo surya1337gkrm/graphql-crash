@@ -49,8 +49,20 @@ const resolvers = {
       return db.games;
     },
     addGame(_, args) {
-      db.games = [...db.games, { ...args.game, id: (db.games.length + 1).toString() }];
+      db.games = [
+        ...db.games,
+        { ...args.game, id: (db.games.length + 1).toString() },
+      ];
       return db.games;
+    },
+    updateGame(_, args) {
+      db.games = db.games.map((game) => {
+        if (game.id === args.id) {
+          return { ...game, ...args.edits };
+        }
+        return game;
+      });
+      return db.games.find((game) => game.id === args.id);
     },
   },
 };
